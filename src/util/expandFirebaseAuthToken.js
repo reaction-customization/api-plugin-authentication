@@ -1,10 +1,12 @@
 import * as admin from 'firebase-admin';
 import config from "../config.js";
 
-const { FIREBASE_DATABASE_URL } = config;
+const { FIREBASE_DATABASE_URL, GOOGLE_APPLICATION_CREDENTIALS  } = config;
+
+var serviceAccount = require(GOOGLE_APPLICATION_CREDENTIALS);
 
 admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
+  credential: admin.credential.cert(serviceAccount),
   databaseURL: FIREBASE_DATABASE_URL
 });
 
