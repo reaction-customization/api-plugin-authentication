@@ -1,6 +1,6 @@
 import pkg from "../package.json";
 import mutations from "./mutations/index.js";
-import tokenMiddleware from "./util/tokenMiddleware.js";
+import firebaseTokenMiddleware from "./util/firebaseTokenMiddleware.js";
 
 /**
  * @summary Import and call this function to add this plugin to your API.
@@ -22,7 +22,7 @@ export default async function register(app) {
       {
         route: "graphql",
         stage: "authenticate",
-        fn: tokenMiddleware
+        fn: firebaseTokenMiddleware
       }
     ]
   });
