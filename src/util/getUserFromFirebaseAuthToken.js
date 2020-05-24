@@ -1,5 +1,5 @@
 import Logger from "@reactioncommerce/logger";
-import expandFirebaseAuthToken from "./expandFirebaseAuthToken";
+import expandFirebaseAuthToken from "./expandFirebaseAuthToken.js";
 
 /**
  * Given an Authorization Bearer token and the current context, returns the user document
